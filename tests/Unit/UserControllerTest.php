@@ -15,4 +15,17 @@ class UserControllerTest extends TestCase
 			$controller->index()
 		);
 	}
+
+    public function testUserControllerIndexActionWithParams()
+    {
+        $params = [
+            'name' => 'a',
+        ];
+
+        $controller = new UserController($params);
+        $this->assertEquals(
+            'UserController index name=a',
+            $controller->index()
+        );
+    }
 }
